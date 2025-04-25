@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¡Ganaste!</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-family: 'Arial Black', sans-serif;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 150px;
+      color: gold;
+      animation: zoom 1s ease-in-out infinite alternate;
+      text-shadow: 0 0 20px gold, 0 0 40px orange;
+    }
+
+    h2 {
+      font-size: 50px;
+      color: gold;
+      animation: zoom 1s ease-in-out infinite alternate;
+      text-shadow: 0 0 15px gold, 0 0 0px orange;
+      margin-top: 100px;
+    }
+
+    @keyframes zoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.2); }
+    }
+
+    img {
+      margin-top: 30px;
+      max-width: 400px;
+      width: 80%;
+      border-radius: 0px;
+      box-shadow: 0 0 0px white;
+    }
+    
+  </style>
+</head>
+<body onload="playSound()">
+  <h1><img class="imagen-ganaste" src="C:\Users\asistemas.FAMOSA\Desktop\Feria\Mision.jpg" alt="Ganaste"></h1>
+  <h1><img src="C:\Users\asistemas.FAMOSA\Desktop\Feria\bender-bien.png" alt="Ganaste"></h1>
+  <audio id="sound" src="C:\Users\asistemas.FAMOSA\Desktop\Feria\GTA.mp3"></audio>
+  <h2>Toca la Pantalla ;-)</h2>
+
+  <script>
+    function playSound() {
+    const audio = document.getElementById('sound');
+    audio.play().catch(error => {
+      console.log("Audio bloqueado hasta que el usuario interactúe.");
+      });      
+    }
+    document.addEventListener("touchstart", playSound, { once: true });
+    document.addEventListener("click", playSound, { once: true });
+  </script>
+</body>
+</html>
